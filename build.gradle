@@ -86,25 +86,6 @@ project(":core") {
     }
 }
 
-project(":html") {
-    apply plugin: "java-library"
-    apply plugin: "gwt"
-    apply plugin: "war"
-    apply plugin: "org.gretty"
-
-
-    dependencies {
-        implementation project(":core")
-        api "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
-        api "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
-        api "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
-        api "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion:sources"
-        api "com.badlogicgames.gdx-controllers:gdx-controllers-gwt:$gdxControllersVersion"
-        api "com.badlogicgames.gdx-controllers:gdx-controllers-gwt:$gdxControllersVersion:sources"
-        api "com.badlogicgames.gdx:gdx-ai:$aiVersion:sources"
-        
-    }
-}
 
 project(":ios") {
     apply plugin: "java-library"

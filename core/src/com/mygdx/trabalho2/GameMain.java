@@ -1,6 +1,8 @@
 package com.mygdx.trabalho2;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -8,6 +10,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class GameMain extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
+	float x;
+	float y;
 	
 	@Override
 	public void create () {
@@ -18,8 +22,12 @@ public class GameMain extends ApplicationAdapter {
 	@Override
 	public void render () {
 		ScreenUtils.clear(1, 0, 0, 1);
+
+		if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+			y += 10;
+		}
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(img, x, y);
 		batch.end();
 	}
 	
