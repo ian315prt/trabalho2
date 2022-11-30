@@ -25,6 +25,7 @@ public class GameMain extends ApplicationAdapter {
 
 		if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
 			y += 10;
+			x += 10;
 		}
 		batch.begin();
 		batch.draw(img, x, y);
