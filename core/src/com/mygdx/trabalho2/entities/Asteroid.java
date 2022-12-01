@@ -5,33 +5,32 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.trabalho2.tools.CollisionReact;
 
-public class Bullets {
-
-    public static final int SPEED = 500;
-    public static final int DEFAULT_Y = 40;
-    public static final int WIDTH = 3;
-    public static final int HEIGHT = 12;
+public class Asteroid {
+    public static final int SPEED = 250;
+    public static final int WIDTH = 20;
+    public static final int HEIGHT = 16;
     private static Texture texture;
 
     float x;
     float y;
-    CollisionReact collisionReact;
     public Boolean remove = false;
 
-    public Bullets (float x) {
+    CollisionReact collisionReact;
+
+    public Asteroid(float x) {
         this.x = x;
-        this.y = DEFAULT_Y;
+        this.y = Gdx.graphics.getHeight();
         this.collisionReact = new CollisionReact(x, y, WIDTH, HEIGHT);
 
         if (texture == null){
-            texture = new Texture("bullet.png");
+            texture = new Texture("asteroid.png");
         }
     }
 
     public void update(float deltaTime){
-        y += SPEED * deltaTime;
+        y -= SPEED * deltaTime;
 
-        if (y > Gdx.graphics.getHeight()){
+        if (y < -HEIGHT){
             remove = true;
         }
 

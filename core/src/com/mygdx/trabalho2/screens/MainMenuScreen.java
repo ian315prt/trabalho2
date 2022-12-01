@@ -12,17 +12,14 @@ public class MainMenuScreen implements Screen {
     private static final int PLAY_BUTTON_HEIGHT = 150;
     private static final int EXIT_BUTTON_WIDTH = 300;
     private static final int EXIT_BUTTON_HEIGHT = 150;
-
     private static final int PLAY_BUTTON_Y = 200;
-    private static final int EXIT_BUTTON_Y =100;
+    private static final int EXIT_BUTTON_Y = 100;
 
     MainGame mainGame;
-
     Texture playButtonActive;
     Texture playButtonInactive;
     Texture exitButtonActive;
     Texture exitButtonInactive;
-
 
     public  MainMenuScreen(MainGame mainGame){
         this.mainGame = mainGame;
